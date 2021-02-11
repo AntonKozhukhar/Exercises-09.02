@@ -16,7 +16,7 @@ let kol = 0;
 
 for (let i = a; a <= b; a++) {
     if (a % 2 == 0) {
-        sum += a;
+      sum += a;
     } else {
     kol++;
     }
@@ -35,7 +35,7 @@ for (let i = 100; i <= 999; i++) {
     sum = num_10 + num_100 + num_1000;
     dob = num_10 * num_100 * num_1000;
     if (sum == dob) {
-        console.log(i);
+      console.log(i);
     }
 }
  */
@@ -83,6 +83,25 @@ else alert("You are wise"); */
 /* 7. В небоскребе N этажей и всего один подъезд; на каждом этаже по 3 квартиры; лифт может останавливаться только на нечетных этажах. Человек садится в лифт и набирает номер нужной ему квартиры М. На какой этаж должен доставить лифт пассажира?
 После этого спросить у пассажира: "Желает ли он продолжить проезд?" */
 
+let floor = 100;
+let apartment = +prompt("What is your apartment number?");
+
+while (ask) {
+  while (apartment) {
+    floor = Math.ceil(apartment / 3);
+    if (floor % 2 == 0) {
+      floor += -1;
+      break;
+    } else {
+      floor;
+      break;
+    }
+  }
+  alert(`Your floor is ${floor}`);
+}
+
+let ask = confirm("Do you want to continue?");
+
 /* 8. Необходимо вывести все точные квадраты натуральных чисел, не превосходящие данного числа N.
 Пример, N = 15
 Ответ будет:
@@ -90,9 +109,10 @@ else alert("You are wise"); */
 4
 9 */
 
-let N = +prompt("Enter number");
+/* let N = +prompt("Enter number");
 for (let i = 1; i <= N; i++) {
   if (i ** 2 <= N) {
     console.log(i ** 2);
   }
 }
+ */
