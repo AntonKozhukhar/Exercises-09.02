@@ -83,7 +83,7 @@ else alert("You are wise"); */
 /* 7. В небоскребе N этажей и всего один подъезд; на каждом этаже по 3 квартиры; лифт может останавливаться только на нечетных этажах. Человек садится в лифт и набирает номер нужной ему квартиры М. На какой этаж должен доставить лифт пассажира?
 После этого спросить у пассажира: "Желает ли он продолжить проезд?" */
 
-let floor = 100;
+/* let floor = 100;
 let apartment = +prompt("What is your apartment number?");
 
 while (ask) {
@@ -97,10 +97,39 @@ while (ask) {
       break;
     }
   }
+}
+alert(`Your floor is ${floor}`);
+let ask = confirm("Do you want to continue?"); */
+
+// 7. V2.0
+
+let floor;
+do {
+  getFloor();
+  getAsk();
+} while (getAsk());
+
+function getFloor() {
+  let apartment = +prompt("What is your apartment number?");
+  while (apartment) {
+    floor = Math.ceil(apartment / 3);
+    if (floor % 2 == 0) {
+      floor += -1;
+      break;
+    } else {
+      floor;
+      break;
+    }
+  }
   alert(`Your floor is ${floor}`);
 }
 
-let ask = confirm("Do you want to continue?");
+function getAsk() {
+  let ask = confirm("Do you want to continue?");
+  if (ask) {
+    getFloor();
+  }
+}
 
 /* 8. Необходимо вывести все точные квадраты натуральных чисел, не превосходящие данного числа N.
 Пример, N = 15
